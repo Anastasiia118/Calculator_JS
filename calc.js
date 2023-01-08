@@ -68,11 +68,14 @@ document.querySelector('.buttons').onclick = (event) => {
                     a = a / b;
             }
 
+        } else {
+            out.textContent = a;
         }
 
         sign = key;
         b = '';
         console.log(a, b, sign);
+        /* out.textContent = sign; */
         return;
     }
     if(key === '='){

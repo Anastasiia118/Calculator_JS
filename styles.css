@@ -23,6 +23,7 @@ white: #fdfdfd
     justify-items: end;
     align-items: end;
     margin-bottom: 20px;
+    overflow:hidden;
 }
 .calc-screen p{
     text-align: right;
