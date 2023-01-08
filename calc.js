@@ -30,9 +30,9 @@ document.querySelector('.buttons').onclick = (event) => {
             a += key;
             out.textContent = a;
         } else if ( a!== '' && b!=='' && finish){
-            b = key;
+            a = key;
             finish = false;
-            out.textContent = b;
+            out.textContent = a;
         } else {
             b += key;
             out.textContent = b;
@@ -42,9 +42,37 @@ document.querySelector('.buttons').onclick = (event) => {
     }
 
     if(action.includes(key)){
+        if(b!==''){
+            switch (sign) {
+                case '+':
+                    a = (+a) + (+b);
+                    out.textContent = a;
+                    break;
+                case '-':
+                    a = a - b;
+                    out.textContent = a;
+                    break;
+                case 'X':
+                    a = a * b;
+                    out.textContent = a;
+                    break;
+                case '/':
+                    if (b === '0'){
+                        out.textContent = 'Error';
+                        a = '';
+                        b = '';
+                        sign = '';
+                        return;
+    
+                    }
+                    a = a / b;
+            }
+
+        }
+
         sign = key;
-        out.textContent = sign;
-        console.log(sign);
+        b = '';
+        console.log(a, b, sign);
         return;
     }
     if(key === '='){
